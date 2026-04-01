@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test</groupId>
+    <artifactId>apdfl-xfa-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>APDFL XFA Form Test</name>
+    <description>Test Datalogics APDFL + Forms Extension on IMM 1294 XFA form</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <apdfl.version>18.59.0</apdfl.version>
+        <natives.dir>${project.build.directory}/natives</natives.dir>
+    </properties>
+
+    <dependencies>
+        <!-- Datalogics Adobe PDF Library (Java wrapper) -->
+        <dependency>
+            <groupId>com.datalogics.pdfl</groupId>
+            <artifactId>pdfl</artifactId>
+            <version>${apdfl.version}</version>
+        </dependency>
+
+        <!-- Datalogics Forms Extension (XFA support, barcode generation) -->
+        <dependency>
+            <groupId>com.datalogics.pdfl</groupId>
+            <artifactId>forms-extension</artifactId>
+            <version>${apdfl.version}</version>
+        </dependency>
+
+        <!-- Windows 64-bit native DLLs for core APDFL -->
+        <dependency>
+            <groupId>com.datalogics.pdfl</groupId>
+            <artifactId>pdfl</artifactId>
+            <version>${apdfl.version}</version>
+            <classifier>win-x86-64-jni</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Windows 64-bit native DLLs for Forms Extension (XFA + barcode) -->
+        <dependency>
+            <groupId>com.datalogics.pdfl</groupId>
+            <artifactId>forms-extension</artifactId>
+            <version>${apdfl.version}</version>
+            <classifier>win-x86-64-jni</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+            APDFL resources: fonts, CMap files, colour profiles, etc.
+            Required at runtime — the Library constructor looks for these.
+        -->
+        <dependency>
+            <groupId>com.datalogics.pdfl</groupId>
+            <artifactId>pdfl</artifactId>
+            <version>${apdfl.version}</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- 1. Unpack Windows DLLs + resources into target/natives -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>unpack-jni</id>
+                        <phase>generate-resources</phase>
+                        <goals><goal>unpack</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.datalogics.pdfl</groupId>
+                                    <artifactId>pdfl</artifactId>
+                                    <version>${apdfl.version}</version>
+                                    <classifier>win-x86-64-jni</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${natives.dir}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.datalogics.pdfl</groupId>
+                                    <artifactId>forms-extension</artifactId>
+                                    <version>${apdfl.version}</version>
+                                    <classifier>win-x86-64-jni</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${natives.dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-resources</id>
+                        <phase>generate-resources</phase>
+                        <goals><goal>unpack</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.datalogics.pdfl</groupId>
+                                    <artifactId>pdfl</artifactId>
+                                    <version>${apdfl.version}</version>
+                                    <classifier>resources</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${natives.dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-jars</id>
+                        <phase>prepare-package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 2. exec:exec — spawns a new JVM so -Djava.library.path is honoured -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <executable>java</executable>
+                    <workingDirectory>${project.basedir}</workingDirectory>
+                    <arguments>
+                        <argument>-Djava.library.path=${natives.dir}</argument>
+                        <argument>-Dproject.basedir=${project.basedir}</argument>
+                        <argument>-classpath</argument>
+                        <classpath/>
+                        <argument>com.test.Main</argument>
+                        <argument>${exec.mode}</argument>
+                    </arguments>
+                    <!-- Add natives dir to PATH so Windows can resolve DLL dependencies -->
+                    <environmentVariables>
+                        <PATH>${natives.dir};${env.PATH}</PATH>
+                    </environmentVariables>
+                </configuration>
+            </plugin>
+
+            <!-- 3. fat jar for standalone use -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.test.Main</mainClass>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

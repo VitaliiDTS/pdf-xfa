@@ -1,0 +1,20 @@
+# Build output
+target/
+
+# Generated PDFs and XMLs — reproduced by running the project
+output/
+
+# Input PDFs — place manually, not committed
+input/
+
+# Environment / secrets
+.env
+apdfl.lic
+
+# JVM crash dumps
+hs_err_pid*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
