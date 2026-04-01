@@ -27,14 +27,25 @@ public class XfaFormFiller {
             ? new File("../../..").getAbsolutePath()
             : new File("").getAbsolutePath());
 
+    // Optional: -Dform.dir=forms/imm1294  selects a form folder under BASE_DIR.
+    // Each form folder contains: template.pdf, data.xml, button.png, output/
+    static String FORM_DIR = blankToNull(System.getProperty("form.dir", null));
+
     // Env-configurable paths (override via environment variables):
     //   APDFL_INPUT_PDF  — full path to input PDF
     //   APDFL_INPUT_XML  — full path to input XML data file
-    static String INPUT_PDF  = env("APDFL_INPUT_PDF",  BASE_DIR + "/input/IMM1294 - 2023.11 - CURRENT.pdf");
-    static String INPUT_XML  = env("APDFL_INPUT_XML",  BASE_DIR + "/src/main/resources/test_data.xml");
-    static String OUTPUT_PDF         = BASE_DIR + "/output/filled_result.pdf";
-    static String OUTPUT_PDF_PRINTED = BASE_DIR + "/output/printed_result.pdf";
-    static String DUMP_XML           = BASE_DIR + "/output/current_xfa_dump.xml";
+    static String INPUT_PDF = FORM_DIR != null
+            ? BASE_DIR + "/" + FORM_DIR + "/template.pdf"
+            : env("APDFL_INPUT_PDF", BASE_DIR + "/input/IMM1294 - 2023.11 - CURRENT.pdf");
+    static String INPUT_XML = FORM_DIR != null
+            ? BASE_DIR + "/" + FORM_DIR + "/data.xml"
+            : env("APDFL_INPUT_XML", BASE_DIR + "/src/main/resources/test_data.xml");
+    static String OUTPUT_DIR = FORM_DIR != null
+            ? BASE_DIR + "/" + FORM_DIR + "/output"
+            : BASE_DIR + "/output";
+    static String OUTPUT_PDF         = OUTPUT_DIR + "/filled_result.pdf";
+    static String OUTPUT_PDF_PRINTED = OUTPUT_DIR + "/printed_result.pdf";
+    static String DUMP_XML           = OUTPUT_DIR + "/current_xfa_dump.xml";
 
     /**
      * Returns the value for the given variable name, checking in order:
@@ -42,6 +53,8 @@ public class XfaFormFiller {
      *   2. System property "env.NAME" (set by Main.loadDotEnv() from .env file)
      *   3. fallback
      */
+    static String blankToNull(String s) { return (s == null || s.isBlank()) ? null : s; }
+
     static String env(String name, String fallback) {
         String val = System.getenv(name);
         if (val != null && !val.isBlank()) return val;
@@ -100,7 +113,7 @@ public class XfaFormFiller {
             dumpXfaTemplate(doc);
 
             // ── 4b. Export current XFA data so we can inspect field names ────
-            new File("output").mkdirs();
+            new File(OUTPUT_DIR).mkdirs();
             System.out.println("\n[INFO] Exporting current XFA data to " + DUMP_XML + " ...");
             boolean exported = doc.exportXFAFormsData(DUMP_XML, XFAFormExportType.XML);
             if (exported) {
@@ -401,7 +414,7 @@ public class XfaFormFiller {
                     if (printed == 0) System.out.println("    (none found — barcode rendering may be via XFA script only)");
 
                     // Save the packet for offline inspection
-                    String tmplPath = BASE_DIR + "/output/xfa_" + packetName + ".xml";
+                    String tmplPath = OUTPUT_DIR + "/xfa_" + packetName + ".xml";
                     java.nio.file.Files.writeString(java.nio.file.Paths.get(tmplPath), tmpl);
                     System.out.println("  Saved → " + tmplPath);
                 }

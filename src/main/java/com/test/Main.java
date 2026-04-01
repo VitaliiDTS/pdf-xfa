@@ -24,6 +24,8 @@ public class Main {
         boolean runBarcode = mode.equals("all") || mode.equals("barcode");
         boolean runAcrobat         = mode.equals("acrobat");
         boolean runAcrobatHeadless = mode.equals("acrobat-headless");
+        boolean runValidate        = mode.equals("validate");
+        boolean runDiscover        = mode.equals("discover");
 
         if (runFill) {
             System.out.println("\n[1/3] Running XfaFormFiller test...\n");
@@ -65,6 +67,26 @@ public class Main {
             }
         }
 
+        if (runValidate) {
+            System.out.println("\n[validate] Running AcrobatValidateStep...\n");
+            try {
+                AcrobatValidateStep.run();
+            } catch (Exception e) {
+                System.err.println("[FAIL] AcrobatValidateStep: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        if (runDiscover) {
+            System.out.println("\n[discover] Running XfaDiscovery...\n");
+            try {
+                XfaDiscovery.run();
+            } catch (Exception e) {
+                System.err.println("[FAIL] XfaDiscovery: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
         if (runAcrobatHeadless) {
             System.out.println("\n[acrobat-headless] Running AcrobatHeadlessStep (no GUI)...\n");
             try {
@@ -77,7 +99,7 @@ public class Main {
 
         System.out.println("\n=================================================");
         System.out.println("  Done. Check output/ folder for result PDFs.");
-        System.out.println("  Modes: fill | flatten | barcode | acrobat | acrobat-headless | all");
+        System.out.println("  Modes: fill | flatten | barcode | validate | discover | acrobat | acrobat-headless | all");
         System.out.println("=================================================");
     }
 

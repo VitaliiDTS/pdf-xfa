@@ -20,6 +20,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <apdfl.version>18.59.0</apdfl.version>
         <natives.dir>${project.build.directory}/natives</natives.dir>
+        <exec.mode>all</exec.mode>
+        <form.dir></form.dir>
     </properties>
 
     <dependencies>
@@ -145,6 +147,7 @@
                     <arguments>
                         <argument>-Djava.library.path=${natives.dir}</argument>
                         <argument>-Dproject.basedir=${project.basedir}</argument>
+                        <argument>-Dform.dir=${form.dir}</argument>
                         <argument>-classpath</argument>
                         <classpath/>
                         <argument>com.test.Main</argument>

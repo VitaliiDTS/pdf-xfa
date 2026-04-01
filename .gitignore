@@ -2,7 +2,7 @@
 target/
 
 # Generated PDFs and XMLs — reproduced by running the project
-output/
+/output/
 
 # Input PDFs — place manually, not committed
 input/
@@ -18,3 +18,13 @@ hs_err_pid*.log
 .idea/
 *.iml
 .vscode/
+
+# Forms — generated discovery files (reproducible via discover)
+forms/*/xfa_*.xml
+
+# Output — keep PDFs, ignore XML dumps
+forms/*/output/*.xml
+
+# Claude memory
+.claude/
+memory/

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<xfa:data>
+<form1>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PAGE 1 — Personal Information
+     ═══════════════════════════════════════════════════════════════════ -->
+<Page1>
+  <!-- CRCNum: set to 0 now; XFA preSave JS will recompute CRC32 over the
+       serialised datasets and overwrite this value before saving. -->
+  <Header>
+    <CRCNum>0</CRCNum>
+  </Header>
+  <PersonalDetails>
+    <ServiceIn><ServiceIn>01</ServiceIn></ServiceIn>
+    <VisaType><VisaType/></VisaType>
+    <UCIClientID/>
+    <Name>
+      <FamilyName>KOVALENKO</FamilyName>
+      <GivenName>OLEKSANDR</GivenName>
+    </Name>
+    <AliasName>
+      <AliasFamilyName/>
+      <AliasGivenName/>
+      <AliasNameIndicator><AliasNameIndicator>0</AliasNameIndicator></AliasNameIndicator>
+    </AliasName>
+    <Sex><Sex>M</Sex></Sex>
+    <DOBYear>1995</DOBYear>
+    <DOBMonth>03</DOBMonth>
+    <DOBDay>15</DOBDay>
+    <PlaceBirthCity>Kyiv</PlaceBirthCity>
+    <PlaceBirthCountry>UKR</PlaceBirthCountry>
+    <Citizenship><Citizenship>UKR</Citizenship></Citizenship>
+
+    <CurrentCOR>
+      <Row2>
+        <Country>UKR</Country>
+        <Status>Citizen</Status>
+        <Other/>
+        <FromDate>1995-03-15</FromDate>
+        <ToDate/>
+      </Row2>
+    </CurrentCOR>
+    <CORDates>
+      <FromYr>1995</FromYr>
+      <FromMM>03</FromMM>
+      <FromDD>15</FromDD>
+      <ToYr/>
+      <ToMM/>
+      <ToDD/>
+    </CORDates>
+
+    <PCRIndicator>N</PCRIndicator>
+
+    <SameAsCORIndicator>Y</SameAsCORIndicator>
+    <CountryWhereApplying>
+      <Row2>
+        <Country/>
+        <Status/>
+        <Other/>
+        <FromDate/>
+        <ToDate/>
+      </Row2>
+    </CountryWhereApplying>
+    <CWADates>
+      <FromYr/>
+      <FromMM/>
+      <FromDD/>
+      <ToYr/>
+      <ToMM/>
+      <ToDD/>
+    </CWADates>
+
+    <!-- ApplicationValidatedFlag = "Yes" tells the form_ready and preSave
+         handlers that validation has already been done, so they will call
+         BC.showBarcodes() + BC.encodeAll() to render the PDF417 barcodes. -->
+    <ApplicationValidatedFlag>Yes</ApplicationValidatedFlag>
+  </PersonalDetails>
+
+  <MaritalStatus>
+    <SectionA>
+      <MaritalStatus>1</MaritalStatus>
+      <DateOfMarriage/>
+      <MarriageDate>
+        <FromYr/>
+        <FromMM/>
+        <FromDD/>
+      </MarriageDate>
+      <FamilyName/>
+      <GivenName/>
+    </SectionA>
+  </MaritalStatus>
+</Page1>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PAGE 2 — Previous Spouse / Languages / Passport / ID / Address
+     ═══════════════════════════════════════════════════════════════════ -->
+<Page2>
+  <MaritalStatus>
+    <SectionA>
+      <PrevMarriedIndicator>N</PrevMarriedIndicator>
+      <!-- DateLastValidated — written by the validate button JS;
+           required for preSave/form_ready to decide to show barcodes. -->
+      <DateLastValidated>
+        <DateCalc/>
+        <Year>2026</Year>
+        <Month>03</Month>
+        <Day>16</Day>
+      </DateLastValidated>
+      <PMFamilyName/>
+      <PrevSpouseDOB>
+        <DOBYear/>
+        <DOBMonth/>
+        <DOBDay/>
+      </PrevSpouseDOB>
+      <GivenName><PMGivenName/></GivenName>
+      <TypeOfRelationship/>
+      <FromDate/>
+      <ToDate><ToDate/></ToDate>
+      <PreviouslyMarriedDates>
+        <FromYr/>
+        <FromMM/>
+        <FromDD/>
+        <ToYr/>
+        <ToMM/>
+        <ToDD/>
+      </PreviouslyMarriedDates>
+
+      <Languages>
+        <languages>
+          <nativeLang><nativeLang>Ukrainian</nativeLang></nativeLang>
+          <ableToCommunicate><ableToCommunicate>Neither</ableToCommunicate></ableToCommunicate>
+          <lov/>
+        </languages>
+        <LanguageTest>0</LanguageTest>
+      </Languages>
+
+      <Passport>
+        <PassportNum><PassportNum>FE123456</PassportNum></PassportNum>
+        <CountryofIssue><CountryofIssue>UKR</CountryofIssue></CountryofIssue>
+        <IssueDate><IssueDate>2020-06-10</IssueDate></IssueDate>
+        <ExpiryDate>2030-06-09</ExpiryDate>
+        <IssueYYYY>2020</IssueYYYY>
+        <IssueMM>06</IssueMM>
+        <IssueDD>10</IssueDD>
+        <expiryYYYY>2030</expiryYYYY>
+        <expiryMM>06</expiryMM>
+        <expiryDD>09</expiryDD>
+        <TaiwanPIN/>
+        <IsraelPassportIndicator>0</IsraelPassportIndicator>
+      </Passport>
+    </SectionA>
+  </MaritalStatus>
+
+  <natID>
+    <q1><natIDIndicator>0</natIDIndicator></q1>
+  </natID>
+
+  <USCard>
+    <q1><usCardIndicator>0</usCardIndicator></q1>
+  </USCard>
+
+  <contact>
+    <AddressRow1>
+      <POBox><POBox/></POBox>
+      <Apt><AptUnit>12</AptUnit></Apt>
+      <StreetNum><StreetNum>45</StreetNum></StreetNum>
+      <Streetname><Streetname>Khreshchatyk St</Streetname></Streetname>
+    </AddressRow1>
+    <AddressRow2>
+      <CityTow><CityTown>Kyiv</CityTown></CityTow>
+      <Country><Country>UKR</Country></Country>
+      <ProvinceState><ProvinceState/></ProvinceState>
+      <PostalCode><PostalCode>01001</PostalCode></PostalCode>
+      <District/>
+    </AddressRow2>
+    <SameAsMailingIndicator>1</SameAsMailingIndicator>
+  </contact>
+</Page2>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PAGE 3 — Phone / Study Details / Education / Occupation
+     ═══════════════════════════════════════════════════════════════════ -->
+<Page3>
+  <PhoneNumbers>
+    <Phone>
+      <Type>Mobile</Type>
+      <CanadaUS>0</CanadaUS>
+      <Other>1</Other>
+      <NumberExt/>
+      <NumberCountry>380</NumberCountry>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber>671234567</IntlNumber></IntlNumber>
+    </Phone>
+    <AltPhone>
+      <Type/>
+      <CanadaUS>0</CanadaUS>
+      <Other>0</Other>
+      <NumberExt/>
+      <NumberCountry/>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber/></IntlNumber>
+    </AltPhone>
+  </PhoneNumbers>
+
+  <FaxEmail>
+    <Phone>
+      <CanadaUS>0</CanadaUS>
+      <Other>0</Other>
+      <NumberExt/>
+      <NumberCountry/>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber/></IntlNumber>
+    </Phone>
+    <Email>oleksandr.kovalenko@email.com</Email>
+  </FaxEmail>
+
+  <DetailsOfStudy>
+    <PurposeRow1>
+      <schoolName>
+        <SchoolName>University of Toronto</SchoolName>
+        <Program>Computer Science</Program>
+        <Level>4</Level>
+      </schoolName>
+      <ProvinceState><Prov>06</Prov></ProvinceState>
+      <CityTown><CityTown>3812</CityTown></CityTown>
+      <Address><Address>27 King&apos;s College Circle</Address></Address>
+      <HowLongStudy>
+        <FromDate>2026-09-01</FromDate>
+        <ToDate>2029-04-30</ToDate>
+      </HowLongStudy>
+      <DLI>O123456789012</DLI>
+      <StudentNo/>
+    </PurposeRow1>
+  </DetailsOfStudy>
+
+  <Contacts_Row1>
+    <tuition><amount>12000</amount></tuition>
+    <roomBoard><amount>10000</amount></roomBoard>
+    <other><amount>3000</amount></other>
+    <expensesPaid>
+      <Funds><Funds>40000</Funds></Funds>
+      <expensesPaidBy>Myself</expensesPaidBy>
+      <Other/>
+    </expensesPaid>
+  </Contacts_Row1>
+
+  <Education>
+    <EducationIndicator>1</EducationIndicator>
+    <Edu_Row1>
+      <FromYear>2010</FromYear>
+      <FromMonth>09</FromMonth>
+      <ToYear>2012</ToYear>
+      <ToMonth>06</ToMonth>
+      <FieldOfStudy>Computer Science</FieldOfStudy>
+      <School>Kyiv Polytechnic Institute</School>
+      <CityTown>Kyiv</CityTown>
+      <Country><Country>UKR</Country></Country>
+      <ProvState/>
+    </Edu_Row1>
+  </Education>
+
+  <Occupation>
+    <OccupationRow1>
+      <FromYear>2018</FromYear>
+      <FromMonth>06</FromMonth>
+      <ToYear>2024</ToYear>
+      <ToMonth>08</ToMonth>
+      <Occupation><Occupation>Software Developer</Occupation></Occupation>
+      <Employer>Tech Company Ltd</Employer>
+      <CityTown><CityTown>Kyiv</CityTown></CityTown>
+      <Country><Country>UKR</Country></Country>
+      <ProvState/>
+    </OccupationRow1>
+  </Occupation>
+</Page3>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PAGE 4 — Background Questions / Consent
+     ═══════════════════════════════════════════════════════════════════ -->
+<Page4>
+  <BackgroundInfo>
+    <Choice>N</Choice>
+    <Choice>N</Choice>
+    <Details><MedicalDetails/></Details>
+  </BackgroundInfo>
+
+  <PageWrapper>
+    <BackgroundInfo2>
+      <VisaChoice1>N</VisaChoice1>
+      <VisaChoice2>N</VisaChoice2>
+      <Details><refusedDetails/></Details>
+      <VisaChoice3>N</VisaChoice3>
+    </BackgroundInfo2>
+
+    <BackgroundInfo3>
+      <Choice>N</Choice>
+      <Details/>
+    </BackgroundInfo3>
+
+    <Military>
+      <Choice>N</Choice>
+      <militaryServiceDetails/>
+    </Military>
+
+    <Occupation>
+      <Choice>N</Choice>
+    </Occupation>
+
+    <GovPosition>
+      <Choice>N</Choice>
+    </GovPosition>
+  </PageWrapper>
+
+  <Consent0>
+    <Choice>N</Choice>
+  </Consent0>
+</Page4>
+
+</form1>
+</xfa:data>
+</xfa:datasets>

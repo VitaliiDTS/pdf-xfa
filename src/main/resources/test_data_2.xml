@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<xfa:data>
+<form1>
+
+<Page1>
+  <Header>
+    <CRCNum>0</CRCNum>
+  </Header>
+  <PersonalDetails>
+    <ServiceIn><ServiceIn>01</ServiceIn></ServiceIn>
+    <VisaType><VisaType/></VisaType>
+    <UCIClientID>7734-2281</UCIClientID>
+    <Name>
+      <FamilyName>SHARMA</FamilyName>
+      <GivenName>PRIYA</GivenName>
+    </Name>
+    <AliasName>
+      <AliasFamilyName/>
+      <AliasGivenName/>
+      <AliasNameIndicator><AliasNameIndicator>0</AliasNameIndicator></AliasNameIndicator>
+    </AliasName>
+    <Sex><Sex>F</Sex></Sex>
+    <DOBYear>1998</DOBYear>
+    <DOBMonth>07</DOBMonth>
+    <DOBDay>22</DOBDay>
+    <PlaceBirthCity>Mumbai</PlaceBirthCity>
+    <PlaceBirthCountry>IND</PlaceBirthCountry>
+    <Citizenship><Citizenship>IND</Citizenship></Citizenship>
+
+    <CurrentCOR>
+      <Row2>
+        <Country>IND</Country>
+        <Status>Citizen</Status>
+        <Other/>
+        <FromDate>1998-07-22</FromDate>
+        <ToDate/>
+      </Row2>
+    </CurrentCOR>
+    <CORDates>
+      <FromYr>1998</FromYr>
+      <FromMM>07</FromMM>
+      <FromDD>22</FromDD>
+      <ToYr/>
+      <ToMM/>
+      <ToDD/>
+    </CORDates>
+
+    <PCRIndicator>N</PCRIndicator>
+
+    <SameAsCORIndicator>Y</SameAsCORIndicator>
+    <CountryWhereApplying>
+      <Row2>
+        <Country/>
+        <Status/>
+        <Other/>
+        <FromDate/>
+        <ToDate/>
+      </Row2>
+    </CountryWhereApplying>
+    <CWADates>
+      <FromYr/>
+      <FromMM/>
+      <FromDD/>
+      <ToYr/>
+      <ToMM/>
+      <ToDD/>
+    </CWADates>
+
+    <ApplicationValidatedFlag>Yes</ApplicationValidatedFlag>
+  </PersonalDetails>
+
+  <MaritalStatus>
+    <SectionA>
+      <MaritalStatus>2</MaritalStatus>
+      <DateOfMarriage>2022-11-05</DateOfMarriage>
+      <MarriageDate>
+        <FromYr>2022</FromYr>
+        <FromMM>11</FromMM>
+        <FromDD>05</FromDD>
+      </MarriageDate>
+      <FamilyName>PATEL</FamilyName>
+      <GivenName>ROHAN</GivenName>
+    </SectionA>
+  </MaritalStatus>
+</Page1>
+
+<Page2>
+  <MaritalStatus>
+    <SectionA>
+      <PrevMarriedIndicator>N</PrevMarriedIndicator>
+      <DateLastValidated>
+        <DateCalc/>
+        <Year>2026</Year>
+        <Month>03</Month>
+        <Day>20</Day>
+      </DateLastValidated>
+      <PMFamilyName/>
+      <PrevSpouseDOB>
+        <DOBYear/>
+        <DOBMonth/>
+        <DOBDay/>
+      </PrevSpouseDOB>
+      <GivenName><PMGivenName/></GivenName>
+      <TypeOfRelationship/>
+      <FromDate/>
+      <ToDate><ToDate/></ToDate>
+      <PreviouslyMarriedDates>
+        <FromYr/>
+        <FromMM/>
+        <FromDD/>
+        <ToYr/>
+        <ToMM/>
+        <ToDD/>
+      </PreviouslyMarriedDates>
+
+      <Languages>
+        <languages>
+          <nativeLang><nativeLang>Hindi</nativeLang></nativeLang>
+          <ableToCommunicate><ableToCommunicate>English</ableToCommunicate></ableToCommunicate>
+          <lov/>
+        </languages>
+        <LanguageTest>1</LanguageTest>
+      </Languages>
+
+      <Passport>
+        <PassportNum><PassportNum>N8821034</PassportNum></PassportNum>
+        <CountryofIssue><CountryofIssue>IND</CountryofIssue></CountryofIssue>
+        <IssueDate><IssueDate>2019-03-14</IssueDate></IssueDate>
+        <ExpiryDate>2029-03-13</ExpiryDate>
+        <IssueYYYY>2019</IssueYYYY>
+        <IssueMM>03</IssueMM>
+        <IssueDD>14</IssueDD>
+        <expiryYYYY>2029</expiryYYYY>
+        <expiryMM>03</expiryMM>
+        <expiryDD>13</expiryDD>
+        <TaiwanPIN/>
+        <IsraelPassportIndicator>0</IsraelPassportIndicator>
+      </Passport>
+    </SectionA>
+  </MaritalStatus>
+
+  <natID>
+    <q1><natIDIndicator>0</natIDIndicator></q1>
+  </natID>
+
+  <USCard>
+    <q1><usCardIndicator>0</usCardIndicator></q1>
+  </USCard>
+
+  <contact>
+    <AddressRow1>
+      <POBox><POBox/></POBox>
+      <Apt><AptUnit>3B</AptUnit></Apt>
+      <StreetNum><StreetNum>88</StreetNum></StreetNum>
+      <Streetname><Streetname>Marine Drive</Streetname></Streetname>
+    </AddressRow1>
+    <AddressRow2>
+      <CityTow><CityTown>Mumbai</CityTown></CityTow>
+      <Country><Country>IND</Country></Country>
+      <ProvinceState><ProvinceState>Maharashtra</ProvinceState></ProvinceState>
+      <PostalCode><PostalCode>400002</PostalCode></PostalCode>
+      <District/>
+    </AddressRow2>
+    <SameAsMailingIndicator>1</SameAsMailingIndicator>
+  </contact>
+</Page2>
+
+<Page3>
+  <PhoneNumbers>
+    <Phone>
+      <Type>Mobile</Type>
+      <CanadaUS>0</CanadaUS>
+      <Other>1</Other>
+      <NumberExt/>
+      <NumberCountry>91</NumberCountry>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber>9821055678</IntlNumber></IntlNumber>
+    </Phone>
+    <AltPhone>
+      <Type/>
+      <CanadaUS>0</CanadaUS>
+      <Other>0</Other>
+      <NumberExt/>
+      <NumberCountry/>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber/></IntlNumber>
+    </AltPhone>
+  </PhoneNumbers>
+
+  <FaxEmail>
+    <Phone>
+      <CanadaUS>0</CanadaUS>
+      <Other>0</Other>
+      <NumberExt/>
+      <NumberCountry/>
+      <ActualNumber/>
+      <NANumber>
+        <AreaCode/>
+        <FirstThree/>
+        <LastFive/>
+      </NANumber>
+      <IntlNumber><IntlNumber/></IntlNumber>
+    </Phone>
+    <Email>priya.sharma.ca@gmail.com</Email>
+  </FaxEmail>
+
+  <DetailsOfStudy>
+    <PurposeRow1>
+      <schoolName>
+        <SchoolName>McGill University</SchoolName>
+        <Program>Business Administration</Program>
+        <Level>6</Level>
+      </schoolName>
+      <ProvinceState><Prov>01</Prov></ProvinceState>
+      <CityTown><CityTown>845</CityTown></CityTown>
+      <Address><Address>845 Sherbrooke St W</Address></Address>
+      <HowLongStudy>
+        <FromDate>2026-09-08</FromDate>
+        <ToDate>2028-05-15</ToDate>
+      </HowLongStudy>
+      <DLI>O19395474832</DLI>
+      <StudentNo/>
+    </PurposeRow1>
+  </DetailsOfStudy>
+
+  <Contacts_Row1>
+    <tuition><amount>18500</amount></tuition>
+    <roomBoard><amount>14000</amount></roomBoard>
+    <other><amount>5000</amount></other>
+    <expensesPaid>
+      <Funds><Funds>75000</Funds></Funds>
+      <expensesPaidBy>Myself</expensesPaidBy>
+      <Other/>
+    </expensesPaid>
+  </Contacts_Row1>
+
+  <Education>
+    <EducationIndicator>1</EducationIndicator>
+    <Edu_Row1>
+      <FromYear>2016</FromYear>
+      <FromMonth>07</FromMonth>
+      <ToYear>2020</ToYear>
+      <ToMonth>05</ToMonth>
+      <FieldOfStudy>Commerce and Finance</FieldOfStudy>
+      <School>University of Mumbai</School>
+      <CityTown>Mumbai</CityTown>
+      <Country><Country>IND</Country></Country>
+      <ProvState/>
+    </Edu_Row1>
+  </Education>
+
+  <Occupation>
+    <OccupationRow1>
+      <FromYear>2020</FromYear>
+      <FromMonth>07</FromMonth>
+      <ToYear>2026</ToYear>
+      <ToMonth>03</ToMonth>
+      <Occupation><Occupation>Financial Analyst</Occupation></Occupation>
+      <Employer>HDFC Bank Ltd</Employer>
+      <CityTown><CityTown>Mumbai</CityTown></CityTown>
+      <Country><Country>IND</Country></Country>
+      <ProvState/>
+    </OccupationRow1>
+  </Occupation>
+</Page3>
+
+<Page4>
+  <BackgroundInfo>
+    <Choice>N</Choice>
+    <Choice>N</Choice>
+    <Details><MedicalDetails/></Details>
+  </BackgroundInfo>
+
+  <PageWrapper>
+    <BackgroundInfo2>
+      <VisaChoice1>N</VisaChoice1>
+      <VisaChoice2>N</VisaChoice2>
+      <Details><refusedDetails/></Details>
+      <VisaChoice3>N</VisaChoice3>
+    </BackgroundInfo2>
+
+    <BackgroundInfo3>
+      <Choice>N</Choice>
+      <Details/>
+    </BackgroundInfo3>
+
+    <Military>
+      <Choice>N</Choice>
+      <militaryServiceDetails/>
+    </Military>
+
+    <Occupation>
+      <Choice>N</Choice>
+    </Occupation>
+
+    <GovPosition>
+      <Choice>N</Choice>
+    </GovPosition>
+  </PageWrapper>
+
+  <Consent0>
+    <Choice>Y</Choice>
+  </Consent0>
+</Page4>
+
+</form1>
+</xfa:data>
+</xfa:datasets>

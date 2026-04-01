@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IMM_5645>
+<page1>
+  <!-- Application type: Student -->
+  <Subform1>
+    <Visitor>0</Visitor>
+    <Worker>0</Worker>
+    <Student>1</Student>
+    <Other>0</Other>
+  </Subform1>
+
+  <!-- Section A: Applicant and immediate family -->
+  <SectionA>
+    <Title xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+
+    <Applicant>
+      <AppName>SHARMA, Priya</AppName>
+      <AppDOB>1998-07-22</AppDOB>
+      <AppCOB>Mumbai, India</AppCOB>
+      <AppAddress>3B, 88 Marine Drive, Mumbai, Maharashtra 400002, India</AppAddress>
+      <AppOccupation>Financial Analyst</AppOccupation>
+      <ChildMStatus>Married</ChildMStatus>
+    </Applicant>
+
+    <Spouse>
+      <SpouseName>PATEL, Rohan</SpouseName>
+      <SpouseDOB>1996-03-10</SpouseDOB>
+      <SpouseCOB>Ahmedabad, India</SpouseCOB>
+      <SpouseAddress>3B, 88 Marine Drive, Mumbai, Maharashtra 400002, India</SpouseAddress>
+      <SpouseOccupation>Software Engineer</SpouseOccupation>
+      <SpouseYes>0</SpouseYes>
+      <SpouseNo>1</SpouseNo>
+      <ChildMStatus>Married</ChildMStatus>
+    </Spouse>
+
+    <Mother>
+      <MotherName>SHARMA, Sunita</MotherName>
+      <MotherDOB>1970-04-18</MotherDOB>
+      <MotherCOB>Mumbai, India</MotherCOB>
+      <MotherAddress>14 Linking Road, Bandra West, Mumbai 400050, India</MotherAddress>
+      <MotherOccupation>Teacher</MotherOccupation>
+      <MotherYes>0</MotherYes>
+      <MotherNo>1</MotherNo>
+      <ChildMStatus>Married</ChildMStatus>
+    </Mother>
+
+    <Father>
+      <FatherName>SHARMA, Rajesh</FatherName>
+      <FatherDOB>1967-11-05</FatherDOB>
+      <FatherCOB>Mumbai, India</FatherCOB>
+      <FatherAddress>14 Linking Road, Bandra West, Mumbai 400050, India</FatherAddress>
+      <FatherOccupation>Accountant</FatherOccupation>
+      <FatherYes>0</FatherYes>
+      <FatherNo>1</FatherNo>
+      <ChildMStatus>Married</ChildMStatus>
+    </Father>
+
+    <SectionAsignature/>
+    <SectionAdate>2026-04-01</SectionAdate>
+  </SectionA>
+
+  <!-- Section B: Children of applicant -->
+  <SectionB>
+    <Title xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+    <Child>
+      <ChildName>PATEL, Aarav</ChildName>
+      <ChildMStatus>Single</ChildMStatus>
+      <ChildRelationship>Son</ChildRelationship>
+      <ChildDOB>2023-02-14</ChildDOB>
+      <ChildCOB>Mumbai, India</ChildCOB>
+      <ChildAddress>3B, 88 Marine Drive, Mumbai, Maharashtra 400002, India</ChildAddress>
+      <ChildOccupation>N/A</ChildOccupation>
+      <ChildYes>0</ChildYes><ChildNo>1</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <SectionBsignature/>
+    <SectionBdate>2026-04-01</SectionBdate>
+  </SectionB>
+
+  <!-- Section C: Siblings and other family -->
+  <SectionC>
+    <Title xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+    <Child>
+      <ChildName>SHARMA, Ananya</ChildName>
+      <ChildMStatus>Single</ChildMStatus>
+      <ChildRelationship>Sister</ChildRelationship>
+      <ChildDOB>2001-09-03</ChildDOB>
+      <ChildCOB>Mumbai, India</ChildCOB>
+      <ChildAddress>14 Linking Road, Bandra West, Mumbai 400050, India</ChildAddress>
+      <ChildOccupation>University Student</ChildOccupation>
+      <ChildYes>0</ChildYes><ChildNo>1</ChildNo>
+    </Child>
+    <Child>
+      <ChildMStatus>Single</ChildMStatus>
+      <ChildRelationship>Brother</ChildRelationship>
+      <ChildDOB>2003-05-17</ChildDOB>
+      <ChildCOB>Mumbai, India</ChildCOB>
+      <ChildAddress>14 Linking Road, Bandra West, Mumbai 400050, India</ChildAddress>
+      <ChildOccupation>University Student</ChildOccupation>
+      <ChildYes>0</ChildYes><ChildNo>1</ChildNo>
+      <ChildName>SHARMA, Vikram</ChildName>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <Child>
+      <ChildName/><ChildMStatus/><ChildRelationship/><ChildDOB/><ChildCOB/>
+      <ChildAddress/><ChildOccupation/><ChildYes>0</ChildYes><ChildNo>0</ChildNo>
+    </Child>
+    <SectionCsignature/>
+    <SectionCdate>2026-04-01</SectionCdate>
+    <Subform2 xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+  </SectionC>
+</page1>
+<num>1</num>
+<totPage>2</totPage>
+<FormNumber>IMM 5645 (01-2021) E</FormNumber>
+<num>2</num>
+<totPage>2</totPage>
+<FormNumber>IMM 5645 (01-2021) E</FormNumber>
+</IMM_5645>
