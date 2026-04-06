@@ -5,6 +5,8 @@ import com.datalogics.PDFL.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -17,9 +19,10 @@ import java.util.List;
  */
 public class AcrobatValidateStep {
 
-    private static final String OUTPUT_DIR   = XfaFormFiller.OUTPUT_DIR;
-    private static final String FILLED_PDF  = OUTPUT_DIR + "/validate_filled.pdf";
-    private static final String RESULT_PDF  = OUTPUT_DIR + "/validate_result.pdf";
+    private static final String OUTPUT_DIR  = XfaFormFiller.OUTPUT_DIR;
+    private static final String TIMESTAMP   = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+    private static final String FILLED_PDF  = OUTPUT_DIR + "/validate_filled_" + TIMESTAMP + ".pdf";
+    private static final String RESULT_PDF  = OUTPUT_DIR + "/validate_result_" + TIMESTAMP + ".pdf";
     private static final String PY_SCRIPT   = XfaFormFiller.BASE_DIR + "/scripts/acrobat_validate.py";
     private static final String BUTTON_IMG  = XfaFormFiller.BASE_DIR + "/" + XfaFormFiller.FORM_DIR + "/button.png";
 
