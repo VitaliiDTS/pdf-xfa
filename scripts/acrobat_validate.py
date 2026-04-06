@@ -98,6 +98,7 @@ def save_as(hwnd, output_pdf):
     time.sleep(3.0)
     pyautogui.press('enter')
     time.sleep(2.0)
+    pyautogui.hotkey('ctrl', 'a')   # select existing filename in dialog
     pyautogui.typewrite(output_pdf, interval=0.02)
     time.sleep(0.5)
     pyautogui.press('enter')

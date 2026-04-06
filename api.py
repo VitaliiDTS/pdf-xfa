@@ -407,7 +407,7 @@ def generate():
 
         # 3. Find the output PDF (newest validate_result_*.pdf)
         os.makedirs(OUTPUT_DIR, exist_ok=True)
-        pattern = os.path.join(OUTPUT_DIR, 'validate_result_*.pdf')
+        pattern = os.path.join(OUTPUT_DIR, 'validate_result*.pdf')
         matches = sorted(glob.glob(pattern), key=os.path.getmtime, reverse=True)
         print(f'[api] PDF search pattern: {pattern}')
         print(f'[api] PDF matches: {matches}')
