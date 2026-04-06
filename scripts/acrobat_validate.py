@@ -103,7 +103,8 @@ def save_as(hwnd, output_pdf):
     time.sleep(0.5)
     pyautogui.press('enter')
     time.sleep(2.0)
-    pyautogui.press('enter')
+    pyautogui.press('tab')    # focus Yes on replace dialog
+    pyautogui.press('enter')  # confirm replace
     time.sleep(1.5)
     if os.path.exists(output_pdf):
         print(f'[PY] Saved: {os.path.getsize(output_pdf)/1024:.1f} KB')
