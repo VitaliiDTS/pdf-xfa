@@ -95,7 +95,7 @@ def save_as(hwnd, output_pdf):
     bring_to_front(hwnd)
     print(f'[PY] Saving → {output_pdf}')
     pyautogui.hotkey('ctrl', 'shift', 's')
-    time.sleep(1.0)
+    time.sleep(3.0)
     pyautogui.press('enter')
     time.sleep(2.0)
     pyautogui.typewrite(output_pdf, interval=0.02)
