@@ -80,7 +80,10 @@ def click_validate(hwnd, button_image):
                 print(f'[PY] Validate button found at {loc} (confidence={confidence})')
                 pyautogui.click(loc)
                 print('[PY] Clicked — waiting for validation ...')
-                time.sleep(6)
+                time.sleep(5)
+                print('[PY] Confirming validation modal ...')
+                pyautogui.press('enter')
+                time.sleep(3)
                 return True
         except Exception as e:
             print(f'[PY] Image search confidence={confidence}: {e}')
