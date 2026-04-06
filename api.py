@@ -25,7 +25,9 @@ Flask REST API — IMM 1294 Study Permit PDF generator.
     PDF_XFA_ROOT     — project root (default: C:\pdf-xfa)
     API_PORT         — port (default: 5000)
 """
-
+import sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 import os
 import glob
 import subprocess
