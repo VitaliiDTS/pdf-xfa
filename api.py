@@ -383,6 +383,8 @@ def generate():
             f.write(xml)
 
         # 2. Run maven
+        print(f'[api] Running: {MVN} exec:exec -Dexec.mode=validate -Dform.dir={FORM_DIR}')
+        print(f'[api] cwd: {PROJECT_ROOT}')
         result = subprocess.run(
             [MVN, 'exec:exec', '-Dexec.mode=validate', f'-Dform.dir={FORM_DIR}'],
             cwd=PROJECT_ROOT,
@@ -392,16 +394,29 @@ def generate():
             errors='replace',
         )
         logs = result.stdout + result.stderr
+        APDFL_CRASH = -1073741819
+        print(f'[api] Maven exit code: {result.returncode}'
+              + (' (known APDFL native crash — ignored)' if result.returncode == APDFL_CRASH else ''))
+        # Print first 3000 chars — that's where Java/Python output is; end is just stack trace
+        out = result.stdout
+        print(f'[api] Maven stdout (first 3000):\n{out[:3000]}')
+        if len(out) > 3000:
+            print(f'[api] ... ({len(out) - 3000} chars truncated) ...')
+        if result.stderr:
+            print(f'[api] Maven stderr:\n{result.stderr[:2000]}')
 
         # 3. Find the output PDF (newest validate_result_*.pdf)
         os.makedirs(OUTPUT_DIR, exist_ok=True)
         pattern = os.path.join(OUTPUT_DIR, 'validate_result_*.pdf')
         matches = sorted(glob.glob(pattern), key=os.path.getmtime, reverse=True)
+        print(f'[api] PDF search pattern: {pattern}')
+        print(f'[api] PDF matches: {matches}')
 
         if not matches:
             return jsonify({'error': 'PDF not generated', 'logs': logs}), 500
 
         pdf_path = matches[0]
+        print(f'[api] Returning PDF: {pdf_path}')
 
         if not os.path.exists(pdf_path):
             return jsonify({'error': 'PDF file missing after generation', 'logs': logs}), 500
