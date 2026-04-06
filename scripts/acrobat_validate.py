@@ -101,6 +101,8 @@ def save_as(hwnd, output_pdf):
     pyautogui.press('enter')
     time.sleep(2.0)
     pyautogui.press('enter')
+    time.sleep(1.0)
+    pyautogui.press('enter')
     time.sleep(1.5)
     if os.path.exists(output_pdf):
         print(f'[PY] Saved: {os.path.getsize(output_pdf)/1024:.1f} KB')
