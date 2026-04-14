@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Opens a filled XFA PDF in Acrobat, clicks Validate via image match, saves result.
+Opens a filled XFA PDF in Acrobat, clicks Validate via image match, saves in place.
 
 Usage:
-  python acrobat_validate.py <input_pdf> <output_pdf> --button-image <path>
+  python acrobat_validate.py <input_pdf> --button-image <path>
 
   button_image: screenshot of the Validate button in Acrobat, cropped tight, saved as PNG.
 
@@ -65,8 +65,6 @@ def wait_for_acrobat_window(timeout=30):
 
 def bring_to_front(hwnd):
     user32 = ctypes.windll.user32
-    user32.ShowWindow(hwnd, 3)
-    time.sleep(0.4)
     user32.SetForegroundWindow(hwnd)
     time.sleep(0.3)
 
@@ -91,25 +89,15 @@ def click_validate(hwnd, button_image):
     return False
 
 
-def save_as(hwnd, output_pdf):
+def save_in_place(hwnd, input_pdf):
     bring_to_front(hwnd)
-    print(f'[PY] Saving → {output_pdf}')
-    pyautogui.hotkey('ctrl', 'shift', 's')
-    time.sleep(3.0)
-    pyautogui.press('enter')
+    print(f'[PY] Saving in place → {input_pdf}')
+    pyautogui.hotkey('ctrl', 's')
     time.sleep(2.0)
-    pyautogui.hotkey('ctrl', 'a')   # select existing filename in dialog
-    pyautogui.typewrite(output_pdf, interval=0.02)
-    time.sleep(0.5)
-    pyautogui.press('enter')
-    time.sleep(2.0)
-    pyautogui.press('tab')    # focus Yes on replace dialog
-    pyautogui.press('enter')  # confirm replace
-    time.sleep(1.5)
-    if os.path.exists(output_pdf):
-        print(f'[PY] Saved: {os.path.getsize(output_pdf)/1024:.1f} KB')
+    if os.path.exists(input_pdf):
+        print(f'[PY] Saved: {os.path.getsize(input_pdf)/1024:.1f} KB')
         return True
-    print('[PY] WARN: output file not found after save')
+    print('[PY] WARN: file not found after save')
     return False
 
 
@@ -124,16 +112,13 @@ def close_acrobat(hwnd):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('input_pdf')
-    parser.add_argument('output_pdf')
     parser.add_argument('--button-image', required=True)
     args = parser.parse_args()
 
-    input_pdf     = os.path.abspath(args.input_pdf)
-    output_pdf    = os.path.abspath(args.output_pdf)
-    button_image  = os.path.abspath(args.button_image)
+    input_pdf    = os.path.abspath(args.input_pdf)
+    button_image = os.path.abspath(args.button_image)
 
     print(f'[PY] Input        : {input_pdf}')
-    print(f'[PY] Output       : {output_pdf}')
     print(f'[PY] Button image : {button_image}')
 
     if not os.path.exists(input_pdf):
@@ -151,11 +136,37 @@ def main():
     hwnd = wait_for_acrobat_window(timeout=30)
     time.sleep(6)   # XFA engine init
 
+    # imm5707 only: tab through fields to fire XFA change/calculate events
+    # so dynamic fields (e.g. MarriageInPerson) become visible before validation.
+    if 'imm5707' in input_pdf.replace('\\', '/').lower():
+        bring_to_front(hwnd)
+        print('[PY] imm5707: tabbing through fields to trigger XFA events ...')
+        for _ in range(30):
+            pyautogui.press('tab')
+            time.sleep(0.15)
+        time.sleep(1.0)
+
+    # Click window center to re-focus before Ctrl+Home
+    user32 = ctypes.windll.user32
+    rect = ctypes.wintypes.RECT()
+    user32.GetWindowRect(hwnd, ctypes.byref(rect))
+    cx = (rect.left + rect.right) // 2
+    cy = (rect.top + rect.bottom) // 2
+    print(f'[PY] Clicking window center ({cx}, {cy}) to re-focus ...')
+    pyautogui.click(cx, cy)
+    time.sleep(0.5)
+
+    # imm5707: scroll back to page 1 so the Validate button is visible
+    if 'imm5707' in input_pdf.replace('\\', '/').lower():
+        print('[PY] imm5707: scrolling to start (Ctrl+Home) ...')
+        pyautogui.hotkey('ctrl', 'Home')
+        time.sleep(1.0)
+
     ok = click_validate(hwnd, button_image)
     if not ok:
         sys.exit(1)
 
-    save_as(hwnd, output_pdf)
+    save_in_place(hwnd, input_pdf)
     close_acrobat(hwnd)
     print('[PY] Done.')
 

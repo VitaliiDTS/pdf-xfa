@@ -22,9 +22,23 @@ hs_err_pid*.log
 # Forms — generated discovery files (reproducible via discover)
 forms/*/xfa_*.xml
 
-# Output — keep PDFs, ignore XML dumps
-forms/*/output/*.xml
+# Forms — generated/exported data files (reproduced by running the project)
+forms/*/data.xml
+forms/*/export_output.xml
+forms/*/output/
+
+# Export input PDFs — placed manually for export, not committed
+forms/*/export_input.pdf
+
+# Python
+scripts/__pycache__/
+__pycache__/
+*.pyc
+*.pyo
 
 # Claude memory
 .claude/
 memory/
+
+# Misc working folders
+formsToProcess/

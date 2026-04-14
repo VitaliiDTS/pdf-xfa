@@ -21,8 +21,7 @@ public class AcrobatValidateStep {
 
     private static final String OUTPUT_DIR  = XfaFormFiller.OUTPUT_DIR;
     private static final String TIMESTAMP   = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-    private static final String FILLED_PDF  = OUTPUT_DIR + "/validate_filled_" + TIMESTAMP + ".pdf";
-    private static final String RESULT_PDF  = OUTPUT_DIR + "/validate_result_" + TIMESTAMP + ".pdf";
+    private static final String FILLED_PDF  = OUTPUT_DIR + "/validate_" + TIMESTAMP + ".pdf";
     private static final String PY_SCRIPT   = XfaFormFiller.BASE_DIR + "/scripts/acrobat_validate.py";
     private static final String BUTTON_IMG  = XfaFormFiller.BASE_DIR + "/" + XfaFormFiller.FORM_DIR + "/button.png";
 
@@ -65,13 +64,13 @@ public class AcrobatValidateStep {
             System.out.printf("[OK]  Filled PDF saved: %.1f KB%n", new File(FILLED_PDF).length() / 1024.0);
             doc.close();
 
-            // ── 2. Acrobat: open, click Validate, save ────────────────────────
-            System.out.println("\n[STEP 2/2] Acrobat: open → Validate → save → " + RESULT_PDF);
-            boolean psOk = runPythonScript(PY_SCRIPT, FILLED_PDF, RESULT_PDF, BUTTON_IMG);
+            // ── 2. Acrobat: open, click Validate, save in place ──────────────
+            System.out.println("\n[STEP 2/2] Acrobat: open → Validate → save in place → " + FILLED_PDF);
+            boolean psOk = runPythonScript(PY_SCRIPT, FILLED_PDF, BUTTON_IMG);
 
-            if (new File(RESULT_PDF).exists()) {
+            if (new File(FILLED_PDF).exists()) {
                 System.out.printf("[OK]  Result: %s  (%.1f KB)%n",
-                        RESULT_PDF, new File(RESULT_PDF).length() / 1024.0);
+                        FILLED_PDF, new File(FILLED_PDF).length() / 1024.0);
             } else {
                 System.err.println("[WARN] Result PDF not produced. Check Acrobat output above.");
             }
@@ -87,7 +86,7 @@ public class AcrobatValidateStep {
         // lib.delete() omitted — XFA cleanup DEP issue
     }
 
-    private static boolean runPythonScript(String scriptPath, String inputPdf, String outputPdf,
+    private static boolean runPythonScript(String scriptPath, String inputPdf,
                                             String buttonImg) throws Exception {
         String pyExe = findPython();
         System.out.println("[PY]  Executable  : " + pyExe);
@@ -98,7 +97,6 @@ public class AcrobatValidateStep {
                 pyExe,
                 new File(scriptPath).getAbsolutePath(),
                 new File(inputPdf).getAbsolutePath(),
-                new File(outputPdf).getAbsolutePath(),
                 "--button-image", new File(buttonImg).getAbsolutePath()
         ));
         pb.redirectErrorStream(true);

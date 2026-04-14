@@ -1,160 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <IMM_5646>
 <Page1>
-<subStudentInfo>
-  <FamilyName>NGUYEN</FamilyName>
-  <GivenNames>MINH KHOA</GivenNames>
-  <Citizenship>Vietnam</Citizenship>
-  <DOB>
-    <!-- DOB: 2012-04-15 → 8 digits: 2 0 1 2 0 4 1 5 -->
-    <iDate><d>2</d><d>0</d><d>1</d><d>2</d><d>0</d><d>4</d><d>1</d><d>5</d></iDate>
-    <theDate>2012-04-15</theDate>
-  </DOB>
-  <schoolAddress>St. Michael's College School, 1515 Bathurst St, Toronto, ON M5P 3K2</schoolAddress>
-  <sex><mfGroup>1</mfGroup></sex>
-  <studentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</studentAddress>
-</subStudentInfo>
-
-<subParent>
-  <Banner xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
-  <Parents>
-    <!-- Parent 1: Father -->
-    <Parent>
-      <parentFamilyName>NGUYEN</parentFamilyName>
-      <parentGivenNames>VAN DUC</parentGivenNames>
-      <parentDOB>
-        <!-- DOB: 1975-08-20 → 1 9 7 5 0 8 2 0 -->
-        <iDate><d>1</d><d>9</d><d>7</d><d>5</d><d>0</d><d>8</d><d>2</d><d>0</d></iDate>
-        <theDate>1975-08-20</theDate>
-      </parentDOB>
-      <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
-      <parentTelephone>+84 912 345 678</parentTelephone>
-    </Parent>
-    <!-- Parent 2: Mother -->
-    <Parent>
-      <parentFamilyName>TRAN</parentFamilyName>
-      <parentGivenNames>THI LAN</parentGivenNames>
-      <parentDOB>
-        <!-- DOB: 1977-03-12 → 1 9 7 7 0 3 1 2 -->
-        <iDate><d>1</d><d>9</d><d>7</d><d>7</d><d>0</d><d>3</d><d>1</d><d>2</d></iDate>
-        <theDate>1977-03-12</theDate>
-      </parentDOB>
-      <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
-      <parentTelephone>+84 912 345 679</parentTelephone>
-    </Parent>
-  </Parents>
-</subParent>
-
-<subCustodian>
-  <FamilyName>CHEN</FamilyName>
-  <GivenNames>WEI</GivenNames>
-  <subStatus><statusGroup>1</statusGroup></subStatus>
-  <DOB>
-    <!-- DOB: 1980-05-15 → 1 9 8 0 0 5 1 5 -->
-    <iDate><d>1</d><d>9</d><d>8</d><d>0</d><d>0</d><d>5</d><d>1</d><d>5</d></iDate>
-    <theDate>1980-05-15</theDate>
-  </DOB>
-  <Address>88 Elmwood Ave, Toronto, ON M6G 2H5, Canada</Address>
-  <Telephone>+1 416 555 0192</Telephone>
-</subCustodian>
-
-<subDeclaration>
-  <nameCustodian>Wei Chen</nameCustodian>
-  <nameStudent>Minh Khoa Nguyen</nameStudent>
-  <swornCity>Toronto</swornCity>
-  <swornProv>Ontario</swornProv>
-  <swornCountry>Canada</swornCountry>
-  <swornDay>01</swornDay>
-  <swornMonth>04</swornMonth>
-  <swornYear>2026</swornYear>
-  <parentSig1/>
-  <subParentSig1date>
-    <!-- Signed: 2026-04-01 → 2 0 2 6 0 4 0 1 -->
-    <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>0</d><d>1</d></iDate>
-    <theDate>2026-04-01</theDate>
-  </subParentSig1date>
-  <notarySig/>
-</subDeclaration>
+  <subStudentInfo>
+    <FamilyName>NGUYEN</FamilyName>
+    <GivenNames>MINH KHOA</GivenNames>
+    <Citizenship>270</Citizenship>
+    <DOB>
+      <iDate><d>2</d><d>0</d><d>1</d><d>2</d><d>0</d><d>4</d><d>1</d><d>5</d></iDate>
+      <theDate>2012-04-15</theDate>
+    </DOB>
+    <schoolAddress>St. Michael's College School, 1515 Bathurst St, Toronto, ON M5P 3K2</schoolAddress>
+    <sex><mfGroup>1</mfGroup></sex>
+    <studentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</studentAddress>
+  </subStudentInfo>
+  <subParent>
+    <Banner xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+    <Parents>
+      <Parent>
+        <parentFamilyName>NGUYEN</parentFamilyName>
+        <parentGivenNames>VAN DUC</parentGivenNames>
+        <parentDOB>
+          <iDate><d>1</d><d>9</d><d>7</d><d>5</d><d>0</d><d>8</d><d>2</d><d>0</d></iDate>
+          <theDate>1975-08-20</theDate>
+        </parentDOB>
+        <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
+        <parentTelephone>+84 912 345 678</parentTelephone>
+      </Parent><Parent>
+        <parentFamilyName>TRAN</parentFamilyName>
+        <parentGivenNames>THI LAN</parentGivenNames>
+        <parentDOB>
+          <iDate><d>1</d><d>9</d><d>7</d><d>7</d><d>0</d><d>3</d><d>1</d><d>2</d></iDate>
+          <theDate>1977-03-12</theDate>
+        </parentDOB>
+        <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
+        <parentTelephone>+84 912 345 679</parentTelephone>
+      </Parent>
+    </Parents>
+  </subParent>
+  <subCustodian>
+    <FamilyName>CHEN</FamilyName>
+    <GivenNames>WEI</GivenNames>
+    <subStatus><statusGroup>1</statusGroup></subStatus>
+    <DOB>
+      <iDate><d>1</d><d>9</d><d>8</d><d>0</d><d>0</d><d>5</d><d>1</d><d>5</d></iDate>
+      <theDate>1980-05-15</theDate>
+    </DOB>
+    <Address>88 Elmwood Ave, Toronto, ON M6G 2H5, Canada</Address>
+    <Telephone>+1 416 555 0192</Telephone>
+  </subCustodian>
+  <subDeclaration>
+    <nameCustodian>WEI CHEN</nameCustodian>
+    <nameStudent>MINH KHOA NGUYEN</nameStudent>
+    <swornCity>Toronto</swornCity>
+    <swornProv>Ontario</swornProv>
+    <swornCountry>Canada</swornCountry>
+    <swornDay>01</swornDay>
+    <swornMonth>04</swornMonth>
+    <swornYear>2026</swornYear>
+    <parentSig1/>
+    <subParentSig1date>
+      <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>1</d><d>4</d></iDate>
+      <theDate>2026-04-14</theDate>
+    </subParentSig1date>
+    <notarySig/>
+  </subDeclaration>
 </Page1>
-
 <Page2>
-<header xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
-<subStudentInfo>
-  <FamilyName>NGUYEN</FamilyName>
-  <GivenNames>MINH KHOA</GivenNames>
-  <Citizenship>Vietnam</Citizenship>
-  <DOB>
-    <iDate><d>2</d><d>0</d><d>1</d><d>2</d><d>0</d><d>4</d><d>1</d><d>5</d></iDate>
-    <theDate>2012-04-15</theDate>
-  </DOB>
-  <schoolAddress>St. Michael's College School, 1515 Bathurst St, Toronto, ON M5P 3K2</schoolAddress>
-  <sex><mfGroup>1</mfGroup></sex>
-  <studentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</studentAddress>
-</subStudentInfo>
-
-<subParent>
-  <Banner xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
-  <Parents>
-    <Parent>
-      <parentFamilyName>NGUYEN</parentFamilyName>
-      <parentGivenNames>VAN DUC</parentGivenNames>
-      <parentDOB>
-        <iDate><d>1</d><d>9</d><d>7</d><d>5</d><d>0</d><d>8</d><d>2</d><d>0</d></iDate>
-        <theDate>1975-08-20</theDate>
-      </parentDOB>
-      <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
-      <parentTelephone>+84 912 345 678</parentTelephone>
-    </Parent>
-    <Parent>
-      <parentFamilyName>TRAN</parentFamilyName>
-      <parentGivenNames>THI LAN</parentGivenNames>
-      <parentDOB>
-        <iDate><d>1</d><d>9</d><d>7</d><d>7</d><d>0</d><d>3</d><d>1</d><d>2</d></iDate>
-        <theDate>1977-03-12</theDate>
-      </parentDOB>
-      <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
-      <parentTelephone>+84 912 345 679</parentTelephone>
-    </Parent>
-  </Parents>
-</subParent>
-
-<subCustodian>
-  <FamilyName>CHEN</FamilyName>
-  <GivenNames>WEI</GivenNames>
-  <subStatus><statusGroup>1</statusGroup></subStatus>
-  <DOB>
-    <iDate><d>1</d><d>9</d><d>8</d><d>0</d><d>0</d><d>5</d><d>1</d><d>5</d></iDate>
-    <theDate>1980-05-15</theDate>
-  </DOB>
-  <Address>88 Elmwood Ave, Toronto, ON M6G 2H5, Canada</Address>
-  <Telephone>+1 416 555 0192</Telephone>
-</subCustodian>
-
-<subDeclaration>
-  <childResideGroup>1</childResideGroup>
-  <nameOther/>
-  <nameParent1>Van Duc Nguyen</nameParent1>
-  <nameParent2>Thi Lan Tran</nameParent2>
-  <nameStudent>Minh Khoa Nguyen</nameStudent>
-  <nameCust>Wei Chen</nameCust>
-  <parentSig1/>
-  <subParentSig1date>
-    <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>0</d><d>1</d></iDate>
-    <theDate>2026-04-01</theDate>
-  </subParentSig1date>
-  <parentSig2/>
-  <subParentSig2date>
-    <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>0</d><d>1</d></iDate>
-    <theDate>2026-04-01</theDate>
-  </subParentSig2date>
-  <swornCity>Toronto</swornCity>
-  <swornProv>Ontario</swornProv>
-  <swornCountry>Canada</swornCountry>
-  <swornDay>01</swornDay>
-  <swornMonth>04</swornMonth>
-  <swornYear>2026</swornYear>
-  <notarySig/>
-</subDeclaration>
-<subPNS xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+  <header xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+  <subStudentInfo>
+    <FamilyName>NGUYEN</FamilyName>
+    <GivenNames>MINH KHOA</GivenNames>
+    <Citizenship>270</Citizenship>
+    <DOB>
+      <iDate><d>2</d><d>0</d><d>1</d><d>2</d><d>0</d><d>4</d><d>1</d><d>5</d></iDate>
+      <theDate>2012-04-15</theDate>
+    </DOB>
+    <schoolAddress>St. Michael's College School, 1515 Bathurst St, Toronto, ON M5P 3K2</schoolAddress>
+    <sex><mfGroup>1</mfGroup></sex>
+    <studentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</studentAddress>
+  </subStudentInfo>
+  <subParent>
+    <Banner xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+    <Parents>
+      <Parent>
+        <parentFamilyName>NGUYEN</parentFamilyName>
+        <parentGivenNames>VAN DUC</parentGivenNames>
+        <parentDOB>
+          <iDate><d>1</d><d>9</d><d>7</d><d>5</d><d>0</d><d>8</d><d>2</d><d>0</d></iDate>
+          <theDate>1975-08-20</theDate>
+        </parentDOB>
+        <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
+        <parentTelephone>+84 912 345 678</parentTelephone>
+      </Parent><Parent>
+        <parentFamilyName>TRAN</parentFamilyName>
+        <parentGivenNames>THI LAN</parentGivenNames>
+        <parentDOB>
+          <iDate><d>1</d><d>9</d><d>7</d><d>7</d><d>0</d><d>3</d><d>1</d><d>2</d></iDate>
+          <theDate>1977-03-12</theDate>
+        </parentDOB>
+        <parentAddress>12 Tran Hung Dao St, Hanoi, Vietnam 100000</parentAddress>
+        <parentTelephone>+84 912 345 679</parentTelephone>
+      </Parent>
+    </Parents>
+  </subParent>
+  <subCustodian>
+    <FamilyName>CHEN</FamilyName>
+    <GivenNames>WEI</GivenNames>
+    <subStatus><statusGroup>1</statusGroup></subStatus>
+    <DOB>
+      <iDate><d>1</d><d>9</d><d>8</d><d>0</d><d>0</d><d>5</d><d>1</d><d>5</d></iDate>
+      <theDate>1980-05-15</theDate>
+    </DOB>
+    <Address>88 Elmwood Ave, Toronto, ON M6G 2H5, Canada</Address>
+    <Telephone>+1 416 555 0192</Telephone>
+  </subCustodian>
+  <subDeclaration>
+    <childResideGroup>1</childResideGroup>
+    <nameOther></nameOther>
+    <nameParent1>VAN DUC NGUYEN</nameParent1>
+    <nameParent2>THI LAN TRAN</nameParent2>
+    <nameStudent>MINH KHOA NGUYEN</nameStudent>
+    <nameCust>WEI CHEN</nameCust>
+    <parentSig1/>
+    <subParentSig1date>
+      <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>1</d><d>4</d></iDate>
+      <theDate>2026-04-14</theDate>
+    </subParentSig1date>
+    <parentSig2/>
+    <subParentSig2date>
+      <iDate><d>2</d><d>0</d><d>2</d><d>6</d><d>0</d><d>4</d><d>1</d><d>4</d></iDate>
+      <theDate>2026-04-14</theDate>
+    </subParentSig2date>
+    <swornCity>Toronto</swornCity>
+    <swornProv>Ontario</swornProv>
+    <swornCountry>Canada</swornCountry>
+    <swornDay>01</swornDay>
+    <swornMonth>04</swornMonth>
+    <swornYear>2026</swornYear>
+    <notarySig/>
+  </subDeclaration>
+  <subPNS xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
 </Page2>
 </IMM_5646>
