@@ -95,17 +95,17 @@ def save_in_place(hwnd, input_pdf):
     pyautogui.hotkey('ctrl', 's')
     time.sleep(2.0)
 
-    # Acrobat shows a "recent locations" modal before the save dialog — dismiss it
+    # Acrobat shows a "recent locations" modal — press Enter to proceed to Save dialog
     print('[PY] Dismissing recent locations modal ...')
     pyautogui.press('enter')
     time.sleep(1.5)
 
-    # Save file dialog is now open with the existing filename pre-filled — confirm it
+    # Save dialog — confirm existing filename
     print('[PY] Confirming save dialog ...')
     pyautogui.press('enter')
     time.sleep(2.0)
 
-    # Acrobat may ask "replace existing file?" — default is No, move left to Yes then confirm
+    # "Replace existing file?" — default is No, press Left to select Yes then confirm
     print('[PY] Confirming replace existing file ...')
     pyautogui.press('left')
     time.sleep(0.3)
@@ -124,7 +124,7 @@ def close_acrobat(hwnd):
     pyautogui.hotkey('alt', 'F4')
     time.sleep(1.5)
     pyautogui.press('n')
-    time.sleep(0.8)
+    time.sleep(3.0)
 
 
 def main():
