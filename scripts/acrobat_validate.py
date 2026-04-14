@@ -94,6 +94,24 @@ def save_in_place(hwnd, input_pdf):
     print(f'[PY] Saving in place → {input_pdf}')
     pyautogui.hotkey('ctrl', 's')
     time.sleep(2.0)
+
+    # Acrobat shows a "recent locations" modal before the save dialog — dismiss it
+    print('[PY] Dismissing recent locations modal ...')
+    pyautogui.press('enter')
+    time.sleep(1.5)
+
+    # Save file dialog is now open with the existing filename pre-filled — confirm it
+    print('[PY] Confirming save dialog ...')
+    pyautogui.press('enter')
+    time.sleep(2.0)
+
+    # Acrobat may ask "replace existing file?" — default is No, move left to Yes then confirm
+    print('[PY] Confirming replace existing file ...')
+    pyautogui.press('left')
+    time.sleep(0.3)
+    pyautogui.press('enter')
+    time.sleep(1.5)
+
     if os.path.exists(input_pdf):
         print(f'[PY] Saved: {os.path.getsize(input_pdf)/1024:.1f} KB')
         return True
