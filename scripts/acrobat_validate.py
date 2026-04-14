@@ -112,6 +112,7 @@ def close_acrobat(hwnd):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('input_pdf')
+    parser.add_argument('output_pdf', nargs='?', help='ignored — script saves in place')
     parser.add_argument('--button-image', required=True)
     args = parser.parse_args()
 
